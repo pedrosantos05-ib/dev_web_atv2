@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GameVerse — portal fictício com os melhores jogos indie em destaque, galeria e novidades." />
+  <title>GameVerse - Seu Portal de Jogos</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">Game<span>Verse</span></div>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html" class="ativo">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Descubra seu próximo <span class="destaque">jogo favorito</span></h1>
+    <p>O GameVerse reúne os melhores títulos indie em um só lugar — do RPG épico ao puzzle relaxante.</p>
+    <div class="hero-cta">
+      <a href="#jogos-destaque" class="botao botao-primario">Ver Catálogo</a>
+      <a href="sobre.html" class="botao botao-secundario">Sobre a Plataforma</a>
+    </div>
+    <p class="aviso-tema-claro">Modo escuro recomendado para a melhor experiência visual.</p>
+  </section>
+
+  <main>
+    <section id="jogos-destaque">
+      <h2 class="secao-titulo">Jogos em Destaque</h2>
+
+      <div class="cards-grid">
+
+        <article class="card">
+          <span class="badge">Novo</span>
+          <div class="card-capa" style="background: linear-gradient(135deg, #3a1c5c, #120a1f);">
+            Reino de Sombra
+          </div>
+          <div class="card-corpo">
+            <p class="card-genero">RPG de Fantasia</p>
+            <h3 class="card-titulo">Reino de Sombra</h3>
+            <p>Explore um mundo sombrio dividido por facções em guerra, em uma jornada de escolhas morais.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-capa" style="background: linear-gradient(135deg, #0a3d62, #35e5c9);">
+            Velocidade Nula
+          </div>
+          <div class="card-corpo">
+            <p class="card-genero">Corrida Sci-Fi</p>
+            <h3 class="card-titulo">Velocidade Nula</h3>
+            <p>Corridas antigravitacionais em cidades flutuantes, num circuito que muda a cada volta.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <span class="badge">Destaque</span>
+          <div class="card-capa" style="background: linear-gradient(135deg, #4a0e0e, #120202);">
+            Ecos do Abismo
+          </div>
+          <div class="card-corpo">
+            <p class="card-genero">Terror / Sobrevivência</p>
+            <h3 class="card-titulo">Ecos do Abismo</h3>
+            <p>Sobreviva em cavernas submersas onde cada som pode ser sua salvação — ou sua sentença.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-capa" style="background: linear-gradient(135deg, #b3401f, #ffb703);">
+            Fúria de Aço
+          </div>
+          <div class="card-corpo">
+            <p class="card-genero">Luta / Ação</p>
+            <h3 class="card-titulo">Fúria de Aço</h3>
+            <p>Combates 1x1 em arenas destrutíveis, com um elenco de oito lutadores únicos.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-capa" style="background: linear-gradient(135deg, #2f9e44, #f8c9dc);">
+            Jardim Encantado
+          </div>
+          <div class="card-corpo">
+            <p class="card-genero">Puzzle / Casual</p>
+            <h3 class="card-titulo">Jardim Encantado</h3>
+            <p>Monte combinações mágicas para florescer um jardim encantado, num ritmo tranquilo.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-capa" style="background: linear-gradient(135deg, #2d2a6e, #ff3d9a);">
+            Confins da Galáxia
+          </div>
+          <div class="card-corpo">
+            <p class="card-genero">Estratégia Espacial</p>
+            <h3 class="card-titulo">Confins da Galáxia</h3>
+            <p>Construa sua frota, colonize planetas e negocie alianças na fronteira da galáxia.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="galeria">
+      <h2 class="secao-titulo">Galeria</h2>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item destaque-grande">
+          <input type="checkbox" id="modal-1" class="modal-toggle" />
+          <label for="modal-1">
+            <img src="https://picsum.photos/seed/gameverse1/700/700" alt="Cena de Reino de Sombra, ampliar imagem" loading="lazy" />
+          </label>
+          <div class="modal">
+            <label for="modal-1" class="fechar-modal" aria-label="Fechar imagem">&times;</label>
+            <img src="https://picsum.photos/seed/gameverse1/1200/900" alt="Cena ampliada de Reino de Sombra" />
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <input type="checkbox" id="modal-2" class="modal-toggle" />
+          <label for="modal-2">
+            <img src="https://picsum.photos/seed/gameverse2/400/400" alt="Cena de Velocidade Nula, ampliar imagem" loading="lazy" />
+          </label>
+          <div class="modal">
+            <label for="modal-2" class="fechar-modal" aria-label="Fechar imagem">&times;</label>
+            <img src="https://picsum.photos/seed/gameverse2/1200/900" alt="Cena ampliada de Velocidade Nula" />
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <input type="checkbox" id="modal-3" class="modal-toggle" />
+          <label for="modal-3">
+            <img src="https://picsum.photos/seed/gameverse3/400/400" alt="Cena de Ecos do Abismo, ampliar imagem" loading="lazy" />
+          </label>
+          <div class="modal">
+            <label for="modal-3" class="fechar-modal" aria-label="Fechar imagem">&times;</label>
+            <img src="https://picsum.photos/seed/gameverse3/1200/900" alt="Cena ampliada de Ecos do Abismo" />
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <input type="checkbox" id="modal-4" class="modal-toggle" />
+          <label for="modal-4">
+            <img src="https://picsum.photos/seed/gameverse4/400/400" alt="Cena de Fúria de Aço, ampliar imagem" loading="lazy" />
+          </label>
+          <div class="modal">
+            <label for="modal-4" class="fechar-modal" aria-label="Fechar imagem">&times;</label>
+            <img src="https://picsum.photos/seed/gameverse4/1200/900" alt="Cena ampliada de Fúria de Aço" />
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <input type="checkbox" id="modal-5" class="modal-toggle" />
+          <label for="modal-5">
+            <img src="https://picsum.photos/seed/gameverse5/400/400" alt="Cena de Jardim Encantado, ampliar imagem" loading="lazy" />
+          </label>
+          <div class="modal">
+            <label for="modal-5" class="fechar-modal" aria-label="Fechar imagem">&times;</label>
+            <img src="https://picsum.photos/seed/gameverse5/1200/900" alt="Cena ampliada de Jardim Encantado" />
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <input type="checkbox" id="modal-6" class="modal-toggle" />
+          <label for="modal-6">
+            <img src="https://picsum.photos/seed/gameverse6/400/400" alt="Cena de Confins da Galáxia, ampliar imagem" loading="lazy" />
+          </label>
+          <div class="modal">
+            <label for="modal-6" class="fechar-modal" aria-label="Fechar imagem">&times;</label>
+            <img src="https://picsum.photos/seed/gameverse6/1200/900" alt="Cena ampliada de Confins da Galáxia" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GameVerse — Projeto acadêmico, IFCE Campus Aracati.</p>
+    <p><a href="contato.html">Fale conosco</a> · <a href="sobre.html">Sobre o projeto</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* ============================================
+   GAMEVERSE — layout.css
+   Hero, CSS Grid (cards e galeria), responsividade.
+   ============================================ */
+
+/* ---------- HERO (seção de destaque) ---------- */
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--espaco-xl) var(--espaco-lg);
+  overflow: hidden;
+  /* Background com gradiente + posição, conforme item "Backgrounds" do checklist */
+  background:
+    radial-gradient(circle at 20% 20%, rgba(53, 229, 201, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(255, 61, 154, 0.15), transparent 45%),
+    linear-gradient(180deg, #12162a 0%, var(--bg) 100%);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  max-width: 20ch;
+}
+
+.hero h1 .destaque {
+  background: linear-gradient(90deg, var(--neon-ciano), var(--neon-magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 55ch;
+  font-size: 1.15rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--espaco-sm);
+  margin-top: var(--espaco-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ---------- SEÇÕES GERAIS ---------- */
+section {
+  padding: var(--espaco-xl) 0;
+}
+
+/* ---------- GRID: CARDS DE JOGOS ---------- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-md);
+}
+
+/* ---------- GRID: GALERIA ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--espaco-sm);
+}
+
+/* Um item da galeria ocupa 2 colunas/linhas para criar variação (grid bidimensional real) */
+.gallery-grid .destaque-grande {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* ---------- MEDIA QUERIES: RESPONSIVIDADE ---------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    gap: var(--espaco-sm);
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid .destaque-grande {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  main { padding: 0 var(--espaco-sm); }
+}
+
+/* Recurso extra de media query: adapta para quem prefere tema mais claro do sistema
+   (exploração de "condições/recursos de media queries" além de largura de tela) */
+@media (prefers-color-scheme: light) {
+  .aviso-tema-claro {
+    display: block;
+  }
+}
+
+.aviso-tema-claro {
+  display: none;
+  font-size: 0.8rem;
+  color: var(--neon-amarelo);
+}

@@ -1,0 +1,173 @@
+/* ============================================
+   GAMEVERSE — base.css
+   Variáveis, reset, tipografia, header/nav/footer.
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* ---------- CSS VARIABLES ---------- */
+:root {
+  /* Paleta "arcade neon" */
+  --bg: #0f1220;
+  --bg-elevado: #1a1f36;
+  --bg-card: #171b30;
+  --borda: #2b3156;
+  --neon-ciano: #35e5c9;
+  --neon-magenta: #ff3d9a;
+  --neon-amarelo: #ffd23f;
+  --texto: #e8ecff;
+  --texto-secundario: #9aa3c7;
+
+  /* Tipografia */
+  --fonte-display: 'Orbitron', system-ui, sans-serif;
+  --fonte-corpo: 'Rajdhani', system-ui, sans-serif;
+
+  /* Espaçamento (escala em rem, reutilizada no projeto todo) */
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 1.5rem;
+  --espaco-lg: 2.5rem;
+  --espaco-xl: 4rem;
+
+  --raio: 10px;
+  --transicao: 0.25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ---------- RESET ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--texto);
+  font-family: var(--fonte-corpo);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  /* Padrão sutil de "scanlines", remetendo a telas retrô/arcade */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.015) 0px,
+    rgba(255, 255, 255, 0.015) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-display);
+  color: var(--texto);
+  line-height: 1.2;
+  margin: 0 0 var(--espaco-sm);
+}
+
+p { margin: 0 0 var(--espaco-sm); color: var(--texto-secundario); }
+
+a {
+  color: var(--neon-ciano);
+  text-decoration: none;
+  transition: color var(--transicao);
+}
+
+a:hover { color: var(--neon-magenta); }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+label:focus-within {
+  outline: 2px solid var(--neon-amarelo);
+  outline-offset: 3px;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ---------- HEADER / NAV (Flexbox) ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100; /* garante que o header fique acima do conteúdo ao rolar a página */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--espaco-sm);
+  padding: var(--espaco-sm) var(--espaco-lg);
+  background: rgba(15, 18, 32, 0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+  font-family: var(--fonte-display);
+  font-size: 1.3rem;
+  color: var(--neon-ciano);
+  letter-spacing: 0.05em;
+}
+
+.logo span { color: var(--neon-magenta); }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--espaco-md);
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--texto);
+  font-weight: 600;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a.ativo {
+  color: var(--neon-ciano);
+  border-color: var(--neon-ciano);
+}
+
+/* ---------- FOOTER (Flexbox) ---------- */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaco-xs);
+  padding: var(--espaco-lg);
+  text-align: center;
+  border-top: 1px solid var(--borda);
+  color: var(--texto-secundario);
+  font-size: 0.9rem;
+}
+
+footer a { color: var(--texto-secundario); }
+footer a:hover { color: var(--neon-ciano); }
+
+/* ---------- UTILITÁRIOS COMPARTILHADOS ---------- */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espaco-lg);
+}
+
+.secao-titulo {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  text-align: center;
+  margin-bottom: var(--espaco-lg);
+  position: relative;
+}
+
+/* ::after como sublinhado decorativo — pseudo-elemento com função visual */
+.secao-titulo::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--neon-ciano), var(--neon-magenta));
+  margin: var(--espaco-xs) auto 0;
+  border-radius: 2px;
+}

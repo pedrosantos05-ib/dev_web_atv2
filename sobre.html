@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conheça a proposta do GameVerse e quem desenvolveu a plataforma." />
+  <title>Sobre - GameVerse</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">Game<span>Verse</span></div>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html" class="ativo">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="secao-titulo">Sobre o GameVerse</h2>
+      <p style="max-width: 65ch; margin: 0 auto var(--espaco-lg); text-align: center;">
+        O GameVerse é um portal fictício criado para reunir jogos indie de diferentes gêneros
+        em uma vitrine única — do RPG ao puzzle casual — com foco em curadoria e descoberta.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="secao-titulo">Sobre o Desenvolvedor</h2>
+
+      <!-- FLOAT: a imagem "flutua" à esquerda e o texto contorna ao redor dela -->
+      <div style="max-width: 700px; margin: 0 auto; overflow: hidden;">
+        <img
+          src="https://picsum.photos/seed/gamevers-dev/260/260"
+          alt="Foto do desenvolvedor do projeto"
+          style="float: left; width: 220px; border-radius: var(--raio); margin: 0 var(--espaco-md) var(--espaco-sm) 0; border: 2px solid var(--borda);"
+        />
+        <p>
+          O GameVerse foi desenvolvido por <strong>João Pedro</strong>, estudante de Sistemas de
+          Informação no IFCE Campus Aracati, como trabalho avaliativo da disciplina de
+          Desenvolvimento Web. O projeto foi construído com HTML e CSS puro — sem frameworks —
+          como forma de aprofundar o domínio de Flexbox, CSS Grid e recursos avançados de CSS3.
+        </p>
+        <p>
+          Entre os desafios do projeto, destaca-se a criação de um <strong>modal de imagem
+          funcional sem uma linha de JavaScript</strong>, usando apenas o comportamento nativo do
+          seletor <code>:checked</code> em conjunto com o combinador de irmão geral (<code>~</code>).
+          Essa e outras soluções estão detalhadas no README do repositório.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="secao-titulo">Nossos Valores</h2>
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-corpo" style="padding-top: var(--espaco-md);">
+            <h3 class="card-titulo">Curadoria</h3>
+            <p>Cada jogo listado passa por uma seleção cuidadosa, priorizando qualidade sobre quantidade.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-corpo" style="padding-top: var(--espaco-md);">
+            <h3 class="card-titulo">Acessibilidade</h3>
+            <p>Interface pensada para navegação por teclado e leitores de tela, sem abrir mão do visual.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-corpo" style="padding-top: var(--espaco-md);">
+            <h3 class="card-titulo">Comunidade</h3>
+            <p>Espaço para descobrir estúdios independentes que raramente aparecem nas grandes lojas.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GameVerse — Projeto acadêmico, IFCE Campus Aracati.</p>
+    <p><a href="contato.html">Fale conosco</a> · <a href="index.html">Voltar ao início</a></p>
+  </footer>
+
+</body>
+</html>

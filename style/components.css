@@ -1,0 +1,199 @@
+/* ============================================
+   GAMEVERSE — components.css
+   Cards, badges, modal de imagem, formulário.
+   ============================================ */
+
+/* ---------- BOTÕES ---------- */
+.botao {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-family: var(--fonte-corpo);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.botao-primario {
+  background: linear-gradient(90deg, var(--neon-ciano), var(--neon-magenta));
+  color: var(--bg);
+}
+
+.botao-secundario {
+  background: transparent;
+  border-color: var(--neon-ciano);
+  color: var(--neon-ciano);
+}
+
+.botao:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(53, 229, 201, 0.25);
+}
+
+/* ---------- CARD DE JOGO ---------- */
+.card {
+  position: relative; /* necessário para o badge posicionado em absolute */
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+  transition: transform var(--transicao), border-color var(--transicao);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--neon-ciano);
+}
+
+.card-capa {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fonte-display);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: var(--espaco-sm);
+}
+
+.card-corpo {
+  padding: var(--espaco-sm) var(--espaco-md) var(--espaco-md);
+}
+
+.card-genero {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--neon-ciano);
+}
+
+/* Badge "Novo"/"Destaque": posicionado em absolute sobre o card, com z-index acima da capa */
+.badge {
+  position: absolute;
+  top: var(--espaco-sm);
+  right: var(--espaco-sm);
+  z-index: 5;
+  background: var(--neon-magenta);
+  color: var(--bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* ::before decorativo antes do título do card, com função de "marcador" visual */
+.card-titulo::before {
+  content: "▸ ";
+  color: var(--neon-magenta);
+}
+
+/* ---------- GALERIA + MODAL DE IMAGEM (HTML/CSS puro, sem JS) ---------- */
+.gallery-item {
+  position: relative;
+  border-radius: var(--raio);
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform var(--transicao);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* checkbox escondido: é o que controla o estado aberto/fechado do modal */
+.modal-toggle {
+  display: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000; /* acima de tudo, inclusive do header sticky */
+  background: rgba(4, 5, 12, 0.92);
+  align-items: center;
+  justify-content: center;
+  padding: var(--espaco-lg);
+}
+
+/* Pseudo-classe :checked controlando o irmão seguinte (~) — é o "truque" do modal em CSS puro */
+.modal-toggle:checked ~ .modal {
+  display: flex;
+}
+
+.modal img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border: 3px solid var(--neon-ciano);
+  border-radius: var(--raio);
+}
+
+.fechar-modal {
+  position: absolute;
+  top: var(--espaco-md);
+  right: var(--espaco-lg);
+  font-size: 2rem;
+  color: var(--texto);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.fechar-modal:hover { color: var(--neon-magenta); }
+
+/* ---------- FORMULÁRIO (CONTATO) ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-sm);
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: var(--espaco-lg);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+label { font-weight: 600; font-size: 0.95rem; }
+
+input, textarea, select {
+  background: var(--bg);
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  padding: 0.65rem 0.8rem;
+  color: var(--texto);
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--neon-ciano);
+  outline: none;
+}
+
+/* Pseudo-classe :invalid — feedback visual nativo de validação, sem JS */
+input:invalid:not(:placeholder-shown) {
+  border-color: var(--neon-magenta);
+}
+
+.linha-formulario {
+  display: flex;
+  gap: var(--espaco-sm);
+  flex-wrap: wrap;
+}
+
+.linha-formulario .campo { flex: 1; min-width: 200px; }

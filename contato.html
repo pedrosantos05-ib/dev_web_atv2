@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fale com a equipe do GameVerse ou envie sugestões de jogos." />
+  <title>Contato - GameVerse</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">Game<span>Verse</span></div>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html" class="ativo">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="secao-titulo">Fale Conosco</h2>
+      <p style="max-width: 60ch; margin: 0 auto var(--espaco-lg); text-align: center;">
+        Tem uma sugestão de jogo indie pra indicar, ou alguma dúvida sobre o GameVerse?
+        Preencha o formulário abaixo.
+      </p>
+
+      <form action="#" method="post">
+        <div class="linha-formulario">
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required minlength="2" placeholder="Seu nome" />
+          </div>
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com" />
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="genero-favorito">Gênero de jogo favorito</label>
+          <select id="genero-favorito" name="genero-favorito">
+            <option value="rpg">RPG</option>
+            <option value="corrida">Corrida</option>
+            <option value="terror">Terror / Sobrevivência</option>
+            <option value="luta">Luta / Ação</option>
+            <option value="puzzle">Puzzle / Casual</option>
+            <option value="estrategia">Estratégia</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Escreva sua mensagem ou sugestão de jogo..."></textarea>
+        </div>
+
+        <div class="campo" style="flex-direction: row; align-items: center; gap: 0.5rem;">
+          <input type="checkbox" id="newsletter" name="newsletter" style="width: auto;" />
+          <label for="newsletter" style="font-weight: 500;">Quero receber novidades de novos jogos por e-mail</label>
+        </div>
+
+        <button type="submit" class="botao botao-primario">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GameVerse — Projeto acadêmico, IFCE Campus Aracati.</p>
+    <p><a href="sobre.html">Sobre o projeto</a> · <a href="index.html">Voltar ao início</a></p>
+  </footer>
+
+</body>
+</html>
