@@ -40,7 +40,7 @@
 
 .hero-cta {
   display: flex;
-  gap: var(--espaco-sm);
+  gap: var(--espaco-md);
   margin-top: var(--espaco-sm);
   flex-wrap: wrap;
   justify-content: center;
