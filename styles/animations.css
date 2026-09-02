@@ -34,14 +34,10 @@
   animation: pulsar 2s infinite;
 }
 
-/* Brilho leve percorrendo a borda do botão primário no hover */
+/* Faixa de brilho deslizando sobre o botão primário no hover, como um "carregamento de energia" */
 @keyframes brilho-borda {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-
-.botao-primario {
-  background-size: 200% auto;
+  0% { background-position: -50% 0; }
+  100% { background-position: 150% 0; }
 }
 
 .botao-primario:hover {
